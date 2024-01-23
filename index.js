@@ -28,7 +28,7 @@ const http = require('http');
 
 
 //Socket.io
-const { Server } = require('socket.io'); // Add this
+// const { Server } = require('socket.io'); // Add this
 
 //Cors
 const cors = require("cors");
@@ -62,7 +62,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use('/uploads', express.static('uploads'))
 
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
 // SOCKET.IO
 // Add this
@@ -154,7 +154,7 @@ const PORT = 5000 || process.env.PORT
 
 //Connect first before running server
 connectDB().then(() => {
-    server.listen(PORT, () => 'Server is running on port 5000');
+    app.listen(PORT, () => 'Server is running on port 5000');
     // const server = app.listen(PORT, () => {
     //     console.log(`Server is running on port ${PORT}`)
     // })
